@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        int val = 999;
+        int val; // uninitialized variable
         refMethod(out val);
         Console.WriteLine(val);
         Console.ReadLine();
@@ -15,9 +15,6 @@ class Program
         i = i + 1;
     }
 }
-
-
-
 
 
 
