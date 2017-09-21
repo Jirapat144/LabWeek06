@@ -1,33 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using System.Net;  // for web client
+using System.IO;   // for stream writer
 
-namespace W06Assignment
+
+namespace Labweek06
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int B, L;
-            Console.WriteLine("Enter the Begining and the Lasting Number for finding the primed numbers of 7 : ");
-            B = int.Parse(Console.ReadLine());
-            L = int.Parse(Console.ReadLine());
-            Console.WriteLine("{0}", (PrimeSeven(B, L)));
+            int n = 0;
+            int H, L1, L2;
+            Console.Write("Enter height : ");
+            H = int.Parse(Console.ReadLine());
+            Console.Write("Enter long1 : ");
+            L1 = int.Parse(Console.ReadLine());
+            Console.Write("Enter long2 : ");
+            L2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Trapezoid Area is : " + ans(H, L1, L2));
             Console.ReadKey();
         }
-
-        static int PrimeSeven(int b, int l)
+        static double ans(int H, int L1, int L2)
         {
-            int S = 1;
-            for (int i = b; i <= l; i++)
-            {
-                if (i % 7 == 0) S = i;
-            }
-            return S;
-
+            return (0.5 * (L1 + L2) * H);
         }
-
     }
 }
