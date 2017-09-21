@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 using System.Net;  // for web client
 using System.IO;   // for stream writer
 
@@ -12,20 +9,23 @@ namespace Labweek06
     {
         static void Main(string[] args)
         {
-            int n = 0;
-            int H, L1, L2;
-            Console.Write("Enter height : ");
-            H = int.Parse(Console.ReadLine());
-            Console.Write("Enter long1 : ");
-            L1 = int.Parse(Console.ReadLine());
-            Console.Write("Enter long2 : ");
-            L2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Trapezoid Area is : " + ans(H, L1, L2));
+            double w = 0d;
+            ask(ref w);
+            calculate(ref w);
+            Console.WriteLine("Weight on Moon is : {0}", w);
             Console.ReadKey();
         }
-        static double ans(int H, int L1, int L2)
+        static double ask(ref double w)
         {
-            return (0.5 * (L1 + L2) * H);
+            Console.Write("Enter weight on Moon : ");
+            w = double.Parse(Console.ReadLine());
+            return w;
+
+        }
+        static double calculate(ref double w)
+        {
+            w *= 1.6;
+            return w;
         }
     }
 }
